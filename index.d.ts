@@ -5,7 +5,7 @@ declare module 'dns-js' {
      * Not exported by dns-js
      */
     interface BufferConsumer {
-        // @constructor(arg?: Buffer);
+        new (arg?: Buffer): BufferConsumer;
         tell(): number;
         seek(pos: number): this;
         slice(n: number): this;
@@ -26,7 +26,7 @@ declare module 'dns-js' {
         /**
          * @size {number} defaults to 512
          */
-        // constructor(size?: number);
+        new (size?: number): BufferWriter;
 
         /**
          * @returns {buff.offset}
